@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Ticket System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>Support Ticket System</h1>
+    <div id="userInfo"></div>
+</header>
+
+<!-- ================= LOGIN ================= -->
+<section id="loginPage" class="page">
+    <div class="card">
+        <h2>Login</h2>
+
+        <form id="loginForm">
+            <input type="email" id="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <p>
+            Don't have an account?
+            <a href="#" id="showRegister">Register</a>
+        </p>
+
+        <hr>
+
+        <h4>Demo Accounts</h4>
+
+        <p>
+            Admin :
+            admin@example.com /
+            admin123
+        </p>
+
+        <p>
+            Agent :
+            agent@example.com /
+            agent123
+        </p>
+
+        <p>
+            User :
+            user@example.com /
+            user123
+        </p>
+
+    </div>
+</section>
+
+<!-- ================= REGISTER ================= -->
+
+<section id="registerPage" class="page hidden">
+
+<div class="card">
+
+<h2>Create Account</h2>
+
+<form id="registerForm">
+
+<input
+type="text"
+id="regName"
+placeholder="Full Name"
+required>
+
+<input
+type="email"
+id="regEmail"
+placeholder="Email"
+required>
+
+<input
+type="password"
+id="regPassword"
+placeholder="Password"
+required>
+
+<select id="regRole">
+
+<option value="user">User</option>
+
+<option value="agent">Agent</option>
+
+</select>
+
+<button>Create Account</button>
+
+</form>
+
+<p>
+
+Already have account?
+
+<a href="#" id="showLogin">
+
+Login
+
+</a>
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= ADMIN ================= -->
+
+<section id="adminPage" class="page hidden">
+
+<h2>Admin Dashboard</h2>
+
+<div class="toolbar">
+
+<button id="logoutAdmin">
+
+Logout
+
+</button>
+
+</div>
+
+<div class="dashboard">
+
+<div class="panel">
+
+<h3>All Tickets</h3>
+
+<div id="adminTickets">
+
+</div>
+
+</div>
+
+<div class="panel">
+
+<h3>Assign Ticket</h3>
+
+<form id="assignForm">
+
+<select id="assignTicket">
+
+</select>
+
+<select id="assignAgent">
+
+</select>
+
+<button>
+
+Assign
+
+</button>
+
+</form>
+
+</div>
+
+<div class="panel">
+
+<h3>Login History</h3>
+
+<div id="loginHistory">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= AGENT ================= -->
+
+<section id="agentPage" class="page hidden">
+
+<h2>Agent Dashboard</h2>
+
+<button id="logoutAgent">
+
+Logout
+
+</button>
+
+<div id="agentTickets">
+
+</div>
+
+</section>
+
+<!-- ================= USER ================= -->
+
+<section id="userPage" class="page hidden">
+
+<h2>User Dashboard</h2>
+
+<button id="logoutUser">
+
+Logout
+
+</button>
+
+<div class="card">
+
+<h3>Create Ticket</h3>
+
+<form id="ticketForm">
+
+<input
+type="text"
+id="ticketSubject"
+placeholder="Subject"
+required>
+
+<select id="ticketPriority">
+
+<option value="Low">
+
+Low
+
+</option>
+
+<option value="Medium">
+
+Medium
+
+</option>
+
+<option value="High">
+
+High
+
+</option>
+
+</select>
+
+<textarea
+id="ticketDescription"
+placeholder="Describe your issue"
+required>
+
+</textarea>
+
+<button>
+
+Submit Ticket
+
+</button>
+
+</form>
+
+</div>
+
+<h3>My Tickets</h3>
+
+<div id="userTickets">
+
+</div>
+
+</section>
+
+<!-- ================= TICKET DETAILS ================= -->
+
+<section id="ticketPage" class="page hidden">
+
+<button id="backButton">
+
+Back
+
+</button>
+
+<h2>
+
+Ticket Details
+
+</h2>
+
+<div id="ticketDetails">
+
+</div>
+
+<h3>
+
+Conversation
+
+</h3>
+
+<div id="ticketComments">
+
+</div>
+
+<form id="replyForm">
+
+<textarea
+id="replyText"
+placeholder="Reply">
+
+</textarea>
+
+<button>
+
+Send Reply
+
+</button>
+
+</form>
+
+</section>
+
+<div
+id="toast">
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
